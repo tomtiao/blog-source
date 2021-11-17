@@ -64,3 +64,8 @@ params:
   ShowBreadCrumbs: true # navigation
   ShowPostNavLinks: true
   # ShowShareButtons: true
+
+  # comments
+  comments: true
+
+disqusShortname: nogothere
