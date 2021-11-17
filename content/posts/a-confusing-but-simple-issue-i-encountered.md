@@ -104,7 +104,7 @@ const host = new HostElement();
 host.shadowRoot.append(div);
 ```
 
-创建`div`元素，设置其样式和内容；创建自定义元素的实例；把`div`加到自定义元素中的影子DOM中。看不出问题。
+创建`div`元素，设置其样式和内容；创建自定义元素的实例；把`div`加到自定义元素中的影子 DOM 中。看不出问题。
 
 ```javascript
 const btn = document.createElement('button');
@@ -129,7 +129,7 @@ document.body.append(host, btn);
 
 自定义元素的`display`的值居然是`inline`，我之前理所当然地认为其`display`的值是`block`！
 
-标准是否规定了自定义元素`display`属性的默认值？打开HTML标准，找到自定义元素部分，这是标准对自定义元素的定义[^custom-elements-definition]：
+标准是否规定了自定义元素`display`属性的默认值？打开 HTML 标准，找到自定义元素部分，这是标准对自定义元素的定义[^custom-elements-definition]：
 
 [^custom-elements-definition]: [4.13.3 Core concepts](https://html.spec.whatwg.org/multipage/custom-elements.html#custom-elements-core-concepts "自定义元素的定义")
 
