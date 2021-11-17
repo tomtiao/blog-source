@@ -32,4 +32,4 @@ jobs:
           external_repository: tomtiao/tomtiao.github.io
           publish_branch: main
           publish_dir: ./public
-          cname: github.com
+          cname: nogothere.com
