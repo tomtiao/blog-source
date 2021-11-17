@@ -13,6 +13,7 @@ keywords:
   - '子元素'
   - '父元素'
 description: 一个迷惑但简单的问题
+ShowToc: true
 draft: false
 ---
 ## 背景
@@ -156,7 +157,7 @@ document.body.append(host, btn);
 
 我就把这篇文章当作事实标准吧。
 
-### 为什么Chromium会出问题
+### 为什么 Chromium 会出问题
 
 明白了这个内联元素在哪儿，回过头看看前面提到的两个 issue。
 
