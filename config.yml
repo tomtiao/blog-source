@@ -1,0 +1,66 @@
+baseURL: 'https://nogothere.com'
+languageCode: 'zh-CN'
+title: NoGoThere's Blog
+author: NoGoThere
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFutre: false
+buildExpired: false
+
+isCJKLanguage: true
+
+staticDir: static
+
+minify:
+  minifyOutput: true
+
+permalinks:
+  posts: /:year/:month/:title/
+
+menu:
+  main:
+    - identifier: home
+      name: 首页
+      url: /
+      weight: -10
+    - identifier: posts
+      name: 文章
+      url: /posts/
+      weight: -5
+    - identifier: categories
+      name: 分类
+      url: /categories/
+      weight: 10
+    - identifier: tags
+      name: 标签
+      url: /tags/
+      weight: 20
+
+taxonomies:
+  tag: tags
+  category: categories
+
+params:
+  env: production
+  description: NoGoThere's Blog, where he posts some random stuffs.
+
+  # theme
+  defaultTheme: auto # enable auto light / dark switch
+  
+  # home page info
+  homeInfoParams:
+    Title: 又一个博客
+    Content: 这里什么东西都发。
+  
+  # social accounts
+  socialIcons:
+    - name: 'GitHub'
+      url: 'https://github.com/tomtiao'
+
+  # ShowToc: true # Table of Content
+  ShowReadingTime: true
+  ShowBreadCrumbs: true # navigation
+  ShowPostNavLinks: true
+  # ShowShareButtons: true

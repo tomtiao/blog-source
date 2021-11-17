@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>.hidden { opacity: 0; transition: opacity 0.3s ease-in; }</style>
+</head>
+<body>
+    <div id="a">
+        <div style="padding: 0.5rem; background-color: lightgrey;">foo</div>
+    </div>
+    <script>
+        class HostElement extends HTMLElement {
+            constructor() {
+                super();
+                this.attachShadow( { mode: 'open' } );
+            }
+        }
+        customElements.define('host-element', HostElement);
+
+        const div = document.createElement('div');
+        div.style = 'padding: 0.5rem; background-color: lightgrey;';
+        div.textContent = 'bar';
+        
+        const host = new HostElement();
+        host.shadowRoot.append(div);
+
+        const btn = document.createElement('button');
+        btn.textContent = 'Toggle hidden';
+        btn.addEventListener('click', e => {
+            host.classList.toggle('hidden');
+            document.getElementById('a').classList.toggle('hidden');
+        });
+        
+        document.body.append(host, btn);
+    </script>
+</body>
+</html>
