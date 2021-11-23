@@ -1,5 +1,6 @@
 ---
-title: 都把父自定义元素不透明度设置成 0 了，为什么子元素还显示
+title: 为什么父自定义元素的不透明度不影响子元素
+description: 一个迷惑但简单的问题
 date: 2021-02-11 10:44:58
 isCJKlanguage: true
 categories:
@@ -12,7 +13,6 @@ keywords:
   - '透明度'
   - '子元素'
   - '父元素'
-description: 一个迷惑但简单的问题
 ShowToc: true
 draft: false
 ---
@@ -175,14 +175,12 @@ document.body.append(host, btn);
 
 > Opacity can be thought of as a postprocessing operation. Conceptually, after the element (including its descendants) is rendered into an RGBA offscreen image, the opacity setting specifies how to blend the offscreen rendering into the current composite rendering.
 
-提到了按元素，且包括其子元素，应用透明度，没有提到内联或块级。
+提到了按元素，且包括其子元素，应用透明度，没有提到内联元素或块级元素。由此可以推知，Chromium 的行为并不符合规范。
 
-由此可以推知，Chromium 的行为不正确。第二个帖子中还有回复提到，Chromium 没有正确构造[Layout Tree](https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work#layout)[^wrongly-constructed-layout-tree]，导致本应在内联元素内部的块级元素，出现在内联元素之外，于是透明度没有作用到块级元素上。
+第二个帖子中还有回复提到，Chromium 没有正确构造[Layout Tree](https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work#layout)[^wrongly-constructed-layout-tree]，导致本应在内联元素内部的块级元素，出现在内联元素之外，所以透明度没有作用到块级元素上。
 
 [^wrongly-constructed-layout-tree]: [I've attached the box trees for Firefox and Chromium for the following example: `data:text/html,<span id=target style="opacity:0.2">inline text<div>block text</div></span>`](https://bugs.chromium.org/p/chromium/issues/detail?id=836244#c16)
 
-## 解决问题
+## 解决方案
 
-明白了在这种情况下 Chromium 的渲染有问题，那么避开就好了：将父元素的`display`设置成非`inline`即可。[符合规范的例子](/misc/different-behaviour-across-browsers-a-more-spec-compliant-example.html)。
-
-毕竟，内联元素中本就不该出现块级元素。
+明白了 Chromium 还没有修复这种情况下的渲染问题，那么避开就好了：将父元素的`display`设置成非`inline`即可。[符合规范的例子](/misc/different-behaviour-across-browsers-a-more-spec-compliant-example.html)。毕竟，内联元素中本就不该出现块级元素。
