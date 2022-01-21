@@ -3,7 +3,8 @@ title: "如何安全地在 Windows 中开启 SMB 服务与其他设备进行文�
 date: 2021-03-27T14:51:30+08:00
 isCJKlanguage: true
 categories:
-  - "2021年3月"
+  - "文件共享"
+  - "Windows"
 tags:
   - "SMB"
   - "SMB 1.0"

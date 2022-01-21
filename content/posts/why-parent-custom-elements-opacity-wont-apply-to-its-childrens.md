@@ -4,7 +4,7 @@ description: 一个迷惑但简单的问题
 date: 2021-02-11 10:44:58
 isCJKlanguage: true
 categories:
-  - '2021年2月'
+  - '浏览器'
 tags:
   - 'Web Components'
   - '自定义元素'
