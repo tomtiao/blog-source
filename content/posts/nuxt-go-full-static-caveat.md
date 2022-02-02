@@ -13,6 +13,8 @@ ShowToc: false
 draft: false
 ---
 
+-->[改造后的项目](https://mathe.nogothere.com)<--
+
 ## URL 中含中文带来的问题
 
 Nuxt 2.15.8 有个问题：若 URL 中含非 ASCII 字符，即使请求是在`fetch`和`asyncData`里发起的，生成后的页面仍会请求 API。
