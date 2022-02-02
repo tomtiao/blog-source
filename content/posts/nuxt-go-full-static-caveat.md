@@ -10,7 +10,7 @@ tags:
   - 'SSG'
 description: '前段时间将一个 Go 与 Vue 2 的项目改成用 Nuxt 全站静态生成，踩了一些坑，在这儿总结一下'
 ShowToc: false
-draft: true
+draft: false
 ---
 
 ## URL 中含中文带来的问题
